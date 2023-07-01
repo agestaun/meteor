@@ -1,14 +1,15 @@
-import { useNavigation } from "@react-navigation/native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { Button, Image, StyleSheet, View } from "react-native";
 import { spacing } from "../../styles/Base";
 import Colors from "../../styles/Colors";
 import MeteorImg from "../assets/meteor.png";
 import EndoTextTitle from "../components/EndoTextTitle";
+import { NavRouteList } from "../navigation/NavRouteList";
 
-const HomeScreen = () => {
-  const navigation = useNavigation();
+type Props = NativeStackScreenProps<NavRouteList, "Home">;
 
+const HomeScreen = ({ navigation }: Props) => {
   const goToGame = () => navigation.navigate("Game");
   const goToScores = () => navigation.navigate("Scores");
   const goToSettings = () => navigation.navigate("Settings");
