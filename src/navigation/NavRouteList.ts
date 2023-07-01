@@ -2,7 +2,7 @@
 export type NavRouteList = {
   Home: undefined;
   Game: undefined;
-  GameOver: undefined;
+  GameOver: { scoreInMillis: number };
   Scores: undefined;
   Settings: undefined;
 };
