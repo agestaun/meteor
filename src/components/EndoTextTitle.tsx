@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, Text, TextProps } from "react-native";
 import { fonts } from "../../styles/Base";
 import Colors from "../../styles/Colors";
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EndoTextTitle;
+export default memo(EndoTextTitle);
