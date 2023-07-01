@@ -44,7 +44,10 @@ const App = () => {
         <Stack.Screen
           name="Game"
           component={GameScreen}
-          options={{ headerShown: false, animation: "fade" }}
+          options={{
+            headerShown: false,
+            animation: "fade",
+          }}
         />
         <Stack.Group screenOptions={{ statusBarColor: Colors.dark.surface }}>
           <Stack.Screen name="Scores" component={ScoresScreen} />
