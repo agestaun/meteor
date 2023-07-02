@@ -11,17 +11,19 @@ import Coordinate from "../types/Coordinate";
 
 interface Props {
   size: number;
+  speed: number;
   backgroundColor: ColorValue;
   onPress: () => void;
 }
 
-const EndoBall = ({ size, backgroundColor, onPress }: Props) => {
+const EndoBall = ({ size, speed, backgroundColor, onPress }: Props) => {
   const { width, height } = useWindowDimensions();
   const positionX = useSharedValue((width - size) / 2);
   const positionY = useSharedValue((height - size) / 2);
   const radius = useDerivedValue(() => size / 2);
-  const speedX = useSharedValue(Math.random() * 4); // Random horizontal speed
-  const speedY = useSharedValue(Math.random() * 8); // Random vertical speed. Multiplied by different number not to be the same as X and have different direction.
+  const speedRange = useSharedValue(speed);
+  const speedX = useSharedValue(speedRange.value); // For random start multiply it by Math.random().
+  const speedY = useSharedValue(speedRange.value); // For random start multiply it by Math.random() and make sure is different from speedX.
   const animationId = useRef<null | number>(null);
 
   useEffect(() => {
@@ -30,6 +32,11 @@ const EndoBall = ({ size, backgroundColor, onPress }: Props) => {
 
     updatePosition();
   }, [size]);
+
+  useEffect(() => {
+    // Update speedRange when the speed prop changes
+    speedRange.value = speed;
+  }, [speed]);
 
   const updatePosition = () => {
     const { x, y } = getNextPosition();
@@ -49,8 +56,8 @@ const EndoBall = ({ size, backgroundColor, onPress }: Props) => {
 
   // Returns the next position based on its current position and the speed values.
   const getNextPosition = (): Coordinate => {
-    const x = positionX.value + speedX.value;
-    const y = positionY.value + speedY.value;
+    const x = positionX.value + speedX.value * speedRange.value;
+    const y = positionY.value + speedY.value * speedRange.value;
     return { x, y };
   };
 
