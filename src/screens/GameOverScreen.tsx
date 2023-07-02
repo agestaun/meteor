@@ -1,6 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { useEffect, useState } from "react";
 import {
+  BackHandler,
   Button,
   SafeAreaView,
   StyleSheet,
@@ -24,6 +25,24 @@ const GameOverScreen = ({ navigation, route }: Props) => {
   useEffect(() => {
     ScoreStore.addScore(scoreInMillis);
   }, []);
+
+  useEffect(() => {
+    const subscription = BackHandler.addEventListener(
+      "hardwareBackPress",
+      () => {
+        resetStack();
+        return true;
+      }
+    );
+    return subscription.remove;
+  }, []);
+
+  const resetStack = () => {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "Home" }],
+    });
+  };
 
   const goToGame = () => {
     navigation.goBack();
