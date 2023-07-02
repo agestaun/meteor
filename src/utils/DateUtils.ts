@@ -4,7 +4,7 @@ export const timestampToSecondsAndMillis = (milliseconds: number): string => {
   const millis2Digits = date
     .getMilliseconds()
     .toString()
-    .padStart(2, "0")
+    .padStart(3, "0")
     .slice(0, 2);
   return `${seconds},${millis2Digits}`;
 };
