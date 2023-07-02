@@ -12,7 +12,7 @@ import EndoCard from "../components/EndoCard";
 import EndoSpaceDivider from "../components/EndoSpaceDivider";
 import EndoTextCaption from "../components/EndoTextCaption";
 import { ScoreInstance } from "../models/Score";
-import ScoreStore from "../models/ScoreStore";
+import ScoreStore from "../stores/ScoreStore";
 import { timestampToSecondsAndMillis } from "../utils/DateUtils";
 
 const ScoresScreen = () => {

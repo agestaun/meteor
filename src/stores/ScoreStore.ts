@@ -1,8 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { cast, types } from "mobx-state-tree";
+import { cast, onSnapshot, types } from "mobx-state-tree";
 import AsyncStorageKey from "../enums/AsyncStorageKey";
+import Score, { ScoreInstance } from "../models/Score";
 import { persistObject } from "../utils/StorageUtils";
-import Score, { ScoreInstance } from "./Score";
 
 const MAX_SCORES_STORED = 10;
 
@@ -30,6 +30,11 @@ const ScoreStore = types
           const scores = JSON.parse(scoresHistory);
           self.setScores(scores);
         }
+
+        // Any change on the scores will be persisted automatically.
+        onSnapshot(self.scores, (snapshot) => {
+          persistObject(AsyncStorageKey.SCORES, snapshot);
+        });
       } catch (error) {
         console.error("Error loading scores from storage.", error);
       }
@@ -46,7 +51,6 @@ const ScoreStore = types
       }
 
       self.setScores(sortedScores);
-      await persistObject(AsyncStorageKey.SCORES, sortedScores);
     },
   }))
   .create();

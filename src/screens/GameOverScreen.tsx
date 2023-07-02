@@ -10,8 +10,8 @@ import ConfettiCannon from "react-native-confetti-cannon";
 import { spacing } from "../../styles/Base";
 import Colors from "../../styles/Colors";
 import EndoTextTitle from "../components/EndoTextTitle";
-import ScoreStore from "../models/ScoreStore";
 import { NavRouteList } from "../navigation/NavRouteList";
+import ScoreStore from "../stores/ScoreStore";
 import { timestampToSecondsAndMillis } from "../utils/DateUtils";
 
 type Props = NativeStackScreenProps<NavRouteList, "GameOver">;
