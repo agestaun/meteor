@@ -5,7 +5,7 @@ Destroy the meteor to save the earth! The fate of the planet is in your hands.
 ## How to run it
 
 #### Install the dependencies
-    npm run install
+    npm install
 
 #### Run the project
     npm run start
