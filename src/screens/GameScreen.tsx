@@ -11,22 +11,18 @@ import { NavRouteList } from "../navigation/NavRouteList";
 type Props = NativeStackScreenProps<NavRouteList, "Game">;
 
 const DEFAULT_BALL_SIZE = 100;
-const DEFAULT_BALL_SPEED = 1;
+const DEFAULT_BALL_SPEED = 2;
 const MAX_PRESS_COUNT_GAME_OVER = 5;
 const BALL_SIZE_REDUCTION_FACTOR = 0.8;
-const BALL_SPEED_INCREASE_FACTOR = 5;
+const BALL_SPEED_INCREASE_FACTOR = 1.3;
 
 const GameScreen = ({ navigation }: Props) => {
   const { startChronometer, getElapsedTime } = useChronometer();
   const [totalPresses, setTotalPresses] = useState(0);
   const [ballSize, setBallSize] = useState(DEFAULT_BALL_SIZE);
-  const [speed, setSpeed] = useState(1);
+  const [speed, setSpeed] = useState(DEFAULT_BALL_SPEED);
 
-  useFocusEffect(
-    useCallback(() => {
-      resetGame();
-    }, [])
-  );
+  useFocusEffect(useCallback(() => resetGame(), []));
 
   useOnInactive(() => navigation.goBack());
 
@@ -60,6 +56,7 @@ const GameScreen = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
       <EndoCircle
+        speed={speed}
         size={ballSize}
         backgroundColor={Colors.dark.accent}
         onPress={onPressBall}
