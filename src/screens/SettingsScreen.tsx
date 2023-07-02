@@ -1,8 +1,13 @@
 import React from "react";
-import { Text } from "react-native";
+import { SafeAreaView } from "react-native";
+import EndoTextCaption from "../components/EndoTextCaption";
 
 const SettingsScreen = () => {
-  return <Text>Empty settings</Text>;
+  return (
+    <SafeAreaView>
+      <EndoTextCaption>TODO add settings</EndoTextCaption>
+    </SafeAreaView>
+  );
 };
 
 export default SettingsScreen;
