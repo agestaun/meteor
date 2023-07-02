@@ -4,11 +4,11 @@ Destroy the meteor to save the earth! The fate of the planet is in your hands.
 
 ## How to run it
 
-Install the dependencies
-> npm run install
+#### Install the dependencies
+    npm run install
 
-Run the project
-> npm run start
+#### Run the project
+    npm run start
 
 Press "i" to run iOS or "a" to run Android on the terminal.
 
