@@ -47,17 +47,22 @@ const App = () => {
           options={{
             headerShown: false,
             animation: "fade",
+            gestureEnabled: false,
+          }}
+        />
+        <Stack.Screen
+          name="GameOver"
+          component={GameOverScreen}
+          options={{
+            headerShown: false,
+            animation: "fade",
+            gestureEnabled: false,
           }}
         />
         <Stack.Group screenOptions={{ statusBarColor: Colors.dark.surface }}>
           <Stack.Screen name="Scores" component={ScoresScreen} />
           <Stack.Screen name="Settings" component={SettingsScreen} />
         </Stack.Group>
-        <Stack.Screen
-          name="GameOver"
-          component={GameOverScreen}
-          options={{ headerShown: false, animation: "fade" }}
-        />
       </Stack.Navigator>
     </NavigationContainer>
   );
