@@ -27,7 +27,7 @@ const HomeScreen = ({ navigation }: Props) => {
           />
           <Button
             onPress={goToScores}
-            title={"Score"}
+            title={"Scores"}
             color={Colors.dark.accent}
           />
           <Button
