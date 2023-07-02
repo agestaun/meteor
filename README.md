@@ -34,7 +34,7 @@ Uses MobX-State-Tree. I decided to use it into because it provides essential str
 Uses Reanimated to make animations. Another option would be react-spring, but I am not very familiar. It could also use the animation module provided by React Native.
 
 ### Testing
-Uses jest. However, in my opinion Vitest is a better option, because it's really fast. On the other hand, it takes time to be configured, and this project was already very time-consuming.
+Uses Jest. However, in my opinion Vitest is a better option, because it's really fast and fully compatible with Jest. On the other hand, it takes time to be configured, and this project was already very time-consuming.
 
 ### Others
 I don't rely too much on comments as I believe that well-named functions, variables, and other elements in code make them redundant. A good code is the one that doesn't require the use of comments.
