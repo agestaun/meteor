@@ -1,4 +1,4 @@
-# METEOR GAME
+# METEOR GAME ☄️
 
 Destroy the meteor to save the earth! The fate of the planet is in your hands.
 
@@ -15,7 +15,7 @@ Press "i" to run iOS or "a" to run Android on the terminal.
 ## Run the tests
     npm run test
 
-## TODOs
+## TODO
 You can see them on the [GitHub Repository](https://github.com/agestaun/meteor/issues?q=is%3Aissue).
 
 ## About the project
