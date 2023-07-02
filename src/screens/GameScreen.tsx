@@ -5,6 +5,7 @@ import { StyleSheet, View } from "react-native";
 import Colors from "../../styles/Colors";
 import EndoCircle from "../components/EndoBall";
 import useChronometer from "../hooks/useChronometer";
+import useOnInactive from "../hooks/useOnInactive";
 import { NavRouteList } from "../navigation/NavRouteList";
 
 type Props = NativeStackScreenProps<NavRouteList, "Game">;
@@ -26,6 +27,8 @@ const GameScreen = ({ navigation }: Props) => {
       resetGame();
     }, [])
   );
+
+  useOnInactive(() => navigation.goBack());
 
   const resetGame = () => {
     setBallSize(DEFAULT_BALL_SIZE);
