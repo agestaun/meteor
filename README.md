@@ -1,4 +1,4 @@
-# METEOR GAME
+# METEOR GAME ☄️
 
 Destroy the meteor to save the earth! The fate of the planet is in your hands.
 
