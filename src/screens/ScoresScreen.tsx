@@ -13,7 +13,7 @@ import EndoSpaceDivider from "../components/EndoSpaceDivider";
 import EndoTextCaption from "../components/EndoTextCaption";
 import { ScoreInstance } from "../models/Score";
 import ScoreStore from "../stores/ScoreStore";
-import { timestampToSecondsAndMillis } from "../utils/DateUtils";
+import { formatTimestampToString } from "../utils/DateUtils";
 
 const ScoresScreen = () => {
   const emptyView = () => (
@@ -23,7 +23,7 @@ const ScoresScreen = () => {
   );
 
   const renderItem = ({ item, index }: ListRenderItemInfo<ScoreInstance>) => {
-    const formattedTime = timestampToSecondsAndMillis(item.time);
+    const formattedTime = formatTimestampToString(item.time);
     const backgroundColor = index ? Colors.dark.surface : Colors.dark.accent;
     const title = index ? "Time" : "Best time";
     return (
@@ -31,7 +31,7 @@ const ScoresScreen = () => {
         <EndoTextCaption left style={styles.text}>
           {title}
         </EndoTextCaption>
-        <Text style={styles.text}>{`${formattedTime} seconds`}</Text>
+        <Text style={styles.text}>{formattedTime}</Text>
       </EndoCard>
     );
   };

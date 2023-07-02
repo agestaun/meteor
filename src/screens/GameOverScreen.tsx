@@ -13,14 +13,14 @@ import Colors from "../../styles/Colors";
 import EndoTextTitle from "../components/EndoTextTitle";
 import { NavRouteList } from "../navigation/NavRouteList";
 import ScoreStore from "../stores/ScoreStore";
-import { timestampToSecondsAndMillis } from "../utils/DateUtils";
+import { formatTimestampToString } from "../utils/DateUtils";
 
 type Props = NativeStackScreenProps<NavRouteList, "GameOver">;
 
 const GameOverScreen = ({ navigation, route }: Props) => {
   const { scoreInMillis } = route.params;
   const { width, height } = useWindowDimensions();
-  const [scoreTime] = useState(timestampToSecondsAndMillis(scoreInMillis));
+  const [scoreTime] = useState(formatTimestampToString(scoreInMillis));
 
   useEffect(() => {
     ScoreStore.addScore(scoreInMillis);
@@ -59,7 +59,7 @@ const GameOverScreen = ({ navigation, route }: Props) => {
         fadeOut
         origin={{ x: width / 2, y: height }}
       />
-      <EndoTextTitle>{`Score \n${scoreTime} seconds`}</EndoTextTitle>
+      <EndoTextTitle>{`Score \n${scoreTime}`}</EndoTextTitle>
       <Button
         onPress={goToGame}
         title={"Play again"}
