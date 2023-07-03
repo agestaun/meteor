@@ -51,8 +51,8 @@ describe("Date Utils Tests", () => {
   });
 
   it("should return 10 minutes 14,12 seconds", function () {
-    const milliseconds = 134120;
-    const expected = "2 minutes 14,12 seconds";
+    const milliseconds = 614120;
+    const expected = "10 minutes 14,12 seconds";
     const result = formatTimestampToString(milliseconds);
     expect(result).toBe(expected);
   });
