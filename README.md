@@ -20,7 +20,7 @@ Press "i" to run iOS or "a" to run Android on the terminal.
 
 ## TODO
 
-You can see them on the [GitHub Repository](https://github.com/agestaun/meteor/issues?q=is%3Aissue).
+You can see them in the [issues section](https://github.com/agestaun/meteor/issues?q=is%3Aissue).
 
 ## About the project
 
