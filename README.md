@@ -32,7 +32,7 @@ Uses React Navigation to navigate through the screens. Although I am more famili
 
 ### Storage
 
-Uses AsyncStorage to persist data. Good an easy option to save storage in a safe way.
+Uses AsyncStorage to persist data. Good and easy option to store data securely.
 
 ### State Management
 
