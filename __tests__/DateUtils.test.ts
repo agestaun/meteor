@@ -36,7 +36,7 @@ describe("Date Utils Tests", () => {
     expect(result).toBe(expected);
   });
 
-  it("should return 10 seconds and 06 milliseconds", function () {
+  it("should return 10 seconds and 60 milliseconds", function () {
     const milliseconds = 10608;
     const expected = "10,60 seconds";
     const result = formatTimestampToString(milliseconds);
