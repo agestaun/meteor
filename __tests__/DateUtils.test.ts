@@ -22,7 +22,7 @@ describe("Date Utils Tests", () => {
     expect(result).toBe(expected);
   });
 
-  it("should return 3 seconds and 02 milliseconds", function () {
+  it("should return 3 seconds and 00 milliseconds", function () {
     const milliseconds = 3002;
     const expected = "3,00 seconds";
     const result = formatTimestampToString(milliseconds);
