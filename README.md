@@ -44,7 +44,7 @@ Uses Reanimated to make animations. Another option would be react-spring, but I 
 
 ### Testing
 
-Uses Jest. However, in my opinion Vitest is a better option, because it's really fast and fully compatible with Jest. On the other hand, it takes time to be configured, and this project was already very time-consuming.
+Uses Jest. However, in my opinion Vitest is a better option, because it's really fast and fully compatible with Jest. On the other hand, it takes time to be configured and it is not fully compatible with React Native yet.
 
 ### Others
 
