@@ -18,7 +18,7 @@ Press "i" to run iOS or "a" to run Android on the terminal.
 
     npm run test
 
-## TODO
+## TO DO
 
 You can see them in the [issues section](https://github.com/agestaun/meteor/issues?q=is%3Aissue).
 
